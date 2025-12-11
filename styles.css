@@ -174,3 +174,139 @@ header {
     font-size: 0.75rem;
     color: var(--gray-500);
 }
+/*contenido principal */
+main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+/* Encabezados*/
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    color: var(--gray-500);
+    font-size: 1rem;
+}
+
+/* resumen de tarjetas */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.summary-card {
+    border-top: 4px solid;
+}
+
+.income-card {
+    border-top-color: var(--income-color);
+}
+
+.expense-card {
+    border-top-color: var(--expense-color);
+}
+
+.balance-card {
+    border-top-color: var(--primary-color);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.income-icon {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--income-color);
+}
+
+.expense-icon {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--expense-color);
+}
+
+.balance-icon {
+    background-color: rgba(79, 70, 229, 0.1);
+    color: var(--primary-color);
+}
+
+.card-value {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.income-value {
+    color: var(--income-color);
+}
+
+.expense-value {
+    color: var(--expense-color);
+}
+
+.balance-value {
+    color: var(--primary-color);
+}
+
+.card-change {
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.positive-change {
+    color: var(--income-color);
+}
+
+.negative-change {
+    color: var(--expense-color);
+}
