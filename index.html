@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinanzApp - Sistema de finanzas personales</title>
     
-    <!-- Fuentes de Google -->
+    <!-- Fuentes de google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Iconos de Font Awesome -->
+    <!-- Iconos de font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Chart.js -->
@@ -20,10 +20,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navegación principal -->
+    <!-- Navegacion principal -->
     <header>
         <nav class="navbar container">
-            <!-- Logo y nombre de la aplicación -->
+            <!-- Logo y nombre de la aplicacion -->
             <a href="#dashboard" class="logo">
                 <div class="logo-icon">
                     <i class="fas fa-chart-line"></i>
@@ -31,7 +31,7 @@
                 <span class="logo-text">FinanzApp</span>
             </a>
             
-            <!-- Menú -->
+            <!-- Menu -->
             <ul class="nav-links">
                 <li><a href="#dashboard" class="nav-link active" data-view="dashboard">
                     <i class="fas fa-home"></i> Dashboard
@@ -47,7 +47,7 @@
                 </a></li>
             </ul>
             
-            <!-- Área de usuario -->
+            <!-- area de usuario -->
             <div class="user-area">
                 <div class="user-avatar">JU</div>
                 <div class="user-info">
@@ -62,13 +62,13 @@
     <main class="container">
         <!-- Vista: Dashboard -->
         <section id="dashboard-view" class="view active">
-            <!-- Encabezado de la página -->
+            <!-- Encabezado de la pagina -->
             <section class="page-header">
                 <h1 class="page-title">Dashboard financiero</h1>
                 <p class="page-subtitle">Resumen de tus finanzas personales 2025</p>
             </section>
 
-            <!-- Sección 1: Resumen financiero (tarjetas) -->
+            <!-- Seccion 1: Resumen financiero (tarjetas) -->
             <section class="dashboard-summary">
                 <div class="dashboard-grid">
                     <!-- Tarjeta de Ingresos -->
@@ -132,12 +132,12 @@
                 </div>
             </section>
 
-            <!-- Sección 2: Gráficos -->
+            <!-- Seccion 2: Graficos -->
             <section class="charts-section">
                 <h2 class="section-title">Visualización de datos</h2>
                 
                 <div class="charts-grid">
-                    <!-- Gráfico 1: Gastos por categoría -->
+                    <!-- Grafico 1: Gastos por categoria -->
                     <div class="chart-container">
                         <div class="chart-header">
                             <h3 class="chart-title">Gastos por categoría</h3>
@@ -150,7 +150,7 @@
                         <canvas id="expensesByCategoryChart" height="300"></canvas>
                     </div>
 
-                    <!-- Gráfico 2: Evolución mensual -->
+                    <!-- Grafico 2: Evolucion mensual -->
                     <div class="chart-container">
                         <div class="chart-header">
                             <h3 class="chart-title">Evolución del Balance</h3>
@@ -163,7 +163,7 @@
                         <canvas id="balanceEvolutionChart" height="300"></canvas>
                     </div>
 
-                    <!-- Gráfico 3: Comparativa presupuesto vs real -->
+                    <!-- Grafico 3: Comparativa presupuesto vs real -->
                     <div class="chart-container">
                         <div class="chart-header">
                             <h3 class="chart-title">Presupuesto vs Real</h3>
@@ -175,7 +175,7 @@
                         <canvas id="budgetVsActualChart" height="300"></canvas>
                     </div>
 
-                    <!-- Gráfico 4: Distribución ingresos vs gastos -->
+                    <!-- Grafico 4: Distribucion ingresos vs gastos -->
                     <div class="chart-container">
                         <div class="chart-header">
                             <h3 class="chart-title">Ingresos vs Gastos</h3>
@@ -189,7 +189,7 @@
                 </div>
             </section>
 
-            <!-- Sección 3: Transacciones recientes -->
+            <!-- Seccion 3: Transacciones recientes -->
             <section class="recent-transactions">
                 <div class="table-header">
                     <h2 class="section-title">Transacciones Recientes</h2>
@@ -216,7 +216,7 @@
                             </tr>
                         </thead>
                         <tbody id="recentTransactionsTable">
-                            <!-- Las transacciones se cargarán dinámicamente -->
+                            <!-- Las transacciones se cargaran dinamicamente -->
                         </tbody>
                     </table>
                 </div>
@@ -228,7 +228,7 @@
                 </div>
             </section>
 
-            <!-- Sección 4: Estado de presupuestos -->
+            <!-- Seccion 4: estado de presupuestos -->
             <section class="budgets-section">
                 <div class="section-header">
                     <h2 class="section-title">Estado de presupuestos</h2>
@@ -238,7 +238,7 @@
                 </div>
 
                 <div class="budgets-grid" id="budgetsGrid">
-                    <!-- Los presupuestos se cargarán dinámicamente -->
+                    <!-- los presupuestos se cargaran dinmicamente -->
                 </div>
             </section>
         </section>
@@ -283,7 +283,7 @@
                             </tr>
                         </thead>
                         <tbody id="allTransactionsTable">
-                            <!-- Todas las transacciones se cargarán aquí -->
+                            <!-- todas las transacciones se cargaran aca -->
                         </tbody>
                     </table>
                 </div>
@@ -303,7 +303,7 @@
             </div>
         </section>
 
-        <!-- Vista: Categorías -->
+        <!-- categorias -->
         <section id="categories-view" class="view">
             <section class="page-header">
                 <h1 class="page-title">Categorías</h1>
@@ -320,7 +320,7 @@
 
                 <div class="categories-container">
                     <div class="categories-grid" id="categoriesGrid">
-                        <!-- Las categorías se cargarán aquí -->
+                        <!-- aqui se cargan las categorias -->
                     </div>
                 </div>
 
@@ -344,10 +344,10 @@
                 <div class="table-header">
                     <div class="budgets-filters">
                         <select id="budgetMonthSelect" class="chart-filter">
-                            <!-- Las opciones se llenarán dinámicamente -->
+                            <!-- se llenan dinamicamente las opciones -->
                         </select>
                         <select id="budgetYearSelect" class="chart-filter">
-                            <!-- Las opciones se llenarán dinámicamente -->
+                            <!-- se llenan dinamicamente las opciones -->
                         </select>
                     </div>
                     <button class="btn btn-primary" id="newBudgetBtn2">
@@ -356,21 +356,21 @@
                 </div>
 
                 <div class="budgets-container" id="budgetsContainer">
-                    <!-- Los presupuestos se cargarán aquí -->
+                    <!-- aca se cargan los presupuestos -->
                 </div>
 
                 <div class="budget-summary" id="budgetSummarySection">
-                    <!-- El resumen se cargará aquí -->
+                    <!-- aca se carga el resumen -->
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Modales y notificaciones (se crearán dinámicamente) -->
+    <!-- Modales y notificaciones -->
     <div id="modals-container"></div>
     <div id="notifications-container"></div>
 
-    <!-- Footer: Pie de página -->
+    <!-- Footer: Pie de paina -->
     <footer>
         <div class="footer-content container">
             <div class="footer-info">

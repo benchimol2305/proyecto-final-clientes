@@ -693,7 +693,7 @@ footer {
     color: var(--gray-500);
 }
 
-/* ==================== ESTILOS PARA VISTAS ==================== */
+/* vistas */
 .view {
     display: none;
 }
@@ -702,7 +702,7 @@ footer {
     display: block;
 }
 
-/* ==================== ESTILOS PARA MODALES ==================== */
+/* modales */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -778,7 +778,7 @@ footer {
     gap: 1rem;
 }
 
-/* ==================== ESTILOS PARA FORMULARIOS ==================== */
+/* formularios */
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -817,7 +817,7 @@ footer {
     min-height: 80px;
 }
 
-/* ==================== ESTILOS PARA NOTIFICACIONES ==================== */
+/*notificaciones*/
 .notification {
     position: fixed;
     top: 1rem;
@@ -865,7 +865,7 @@ footer {
     font-size: 1.25rem;
 }
 
-/* ==================== ESTILOS ESPECÍFICOS PARA VISTAS ==================== */
+/* vistas */
 
 /* Filtros de transacciones */
 .transactions-filters {
@@ -984,7 +984,7 @@ canvas {
     height: 300px !important;
 }
 
-/* ==================== MEDIA QUERIES ==================== */
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
