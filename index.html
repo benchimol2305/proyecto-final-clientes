@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinanzApp - Sistema de finanzas personales</title>
     
-    <!--fuentes de Google -->
+    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,27 +13,38 @@
     <!-- Iconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-   
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Estilos -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--navegacion principal -->
+    <!-- Navegación principal -->
     <header>
         <nav class="navbar container">
-            <!-- Logo y nombre de la aplicacion -->
-            <a href="index.html" class="logo">
+            <!-- Logo y nombre de la aplicación -->
+            <a href="#dashboard" class="logo">
                 <div class="logo-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
                 <span class="logo-text">FinanzApp</span>
             </a>
             
-            <!-- Menu -->
+            <!-- Menú -->
             <ul class="nav-links">
-                <li><a href="#dashboard" class="nav-link active"><i class="fas fa-home"></i> Dashboard</a></li>
-                <li><a href="#transactions" class="nav-link"><i class="fas fa-exchange-alt"></i> Transacciones</a></li>
-                <li><a href="#categories" class="nav-link"><i class="fas fa-tags"></i> Categorías</a></li>
-                <li><a href="#budgets" class="nav-link"><i class="fas fa-chart-pie"></i> Presupuestos</a></li>
+                <li><a href="#dashboard" class="nav-link active" data-view="dashboard">
+                    <i class="fas fa-home"></i> Dashboard
+                </a></li>
+                <li><a href="#transactions" class="nav-link" data-view="transactions">
+                    <i class="fas fa-exchange-alt"></i> Transacciones
+                </a></li>
+                <li><a href="#categories" class="nav-link" data-view="categories">
+                    <i class="fas fa-tags"></i> Categorías
+                </a></li>
+                <li><a href="#budgets" class="nav-link" data-view="budgets">
+                    <i class="fas fa-chart-pie"></i> Presupuestos
+                </a></li>
             </ul>
             
             <!-- Área de usuario -->
@@ -47,376 +58,319 @@
         </nav>
     </header>
 
-    <!--Contenido principal de la aplicacion -->
+    <!-- Contenedor principal de vistas -->
     <main class="container">
-        <!-- Encabezado de la pagina -->
-        <section class="page-header">
-            <h1 class="page-title">Dashboard financiero</h1>
-            <p class="page-subtitle">Resumen de tus finanzas personales 2025</p>
-        </section>
+        <!-- Vista: Dashboard -->
+        <section id="dashboard-view" class="view active">
+            <!-- Encabezado de la página -->
+            <section class="page-header">
+                <h1 class="page-title">Dashboard financiero</h1>
+                <p class="page-subtitle">Resumen de tus finanzas personales 2025</p>
+            </section>
 
-        <!-- Seccion 1: Resumen financiero (tarjetas) -->
-        <section class="dashboard-summary">
-            <div class="dashboard-grid">
-                <!-- Tarjeta de Ingresos -->
-                <div class="card summary-card income-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Ingresos totales</h3>
-                        <div class="card-icon income-icon">
-                            <i class="fas fa-arrow-down"></i>
+            <!-- Sección 1: Resumen financiero (tarjetas) -->
+            <section class="dashboard-summary">
+                <div class="dashboard-grid">
+                    <!-- Tarjeta de Ingresos -->
+                    <div class="card summary-card income-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Ingresos totales</h3>
+                            <div class="card-icon income-icon">
+                                <i class="fas fa-arrow-down"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-value income-value">$2,850.00</div>
-                    <div class="card-change positive-change">
-                        <i class="fas fa-arrow-up"></i>
-                        <span>+12.5% vs mes anterior</span>
-                    </div>
-                </div>
-
-                <!-- Tarjeta de Gastos -->
-                <div class="card summary-card expense-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Gastos Totales</h3>
-                        <div class="card-icon expense-icon">
+                        <div class="card-value income-value">$0.00</div>
+                        <div class="card-change positive-change">
                             <i class="fas fa-arrow-up"></i>
+                            <span>+0.0% vs mes anterior</span>
                         </div>
                     </div>
-                    <div class="card-value expense-value">$1,420.50</div>
-                    <div class="card-change negative-change">
-                        <i class="fas fa-arrow-down"></i>
-                        <span>-8.2% vs mes anterior</span>
-                    </div>
-                </div>
 
-                <!-- Tarjeta de Balance -->
-                <div class="card summary-card balance-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Balance Mensual</h3>
-                        <div class="card-icon balance-icon">
-                            <i class="fas fa-balance-scale"></i>
+                    <!-- Tarjeta de Gastos -->
+                    <div class="card summary-card expense-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Gastos Totales</h3>
+                            <div class="card-icon expense-icon">
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+                        </div>
+                        <div class="card-value expense-value">$0.00</div>
+                        <div class="card-change negative-change">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>+0.0% vs mes anterior</span>
                         </div>
                     </div>
-                    <div class="card-value balance-value">$1,429.50</div>
-                    <div class="card-change positive-change">
-                        <i class="fas fa-arrow-up"></i>
-                        <span>+24.7% vs mes anterior</span>
-                    </div>
-                </div>
 
-                <!-- Tarjeta de Presupuesto Restante -->
-                <div class="card summary-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Presupuesto Restante</h3>
-                        <div class="card-icon" style="background-color: rgba(139, 92, 246, 0.1); color: #8B5CF6;">
-                            <i class="fas fa-wallet"></i>
+                    <!-- Tarjeta de Balance -->
+                    <div class="card summary-card balance-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Balance Mensual</h3>
+                            <div class="card-icon balance-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                        </div>
+                        <div class="card-value balance-value">$0.00</div>
+                        <div class="card-change positive-change">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+0.0% vs mes anterior</span>
                         </div>
                     </div>
-                    <div class="card-value" style="color: #8B5CF6;">$579.50</div>
-                    <div class="card-change">
-                        <span>67% del presupuesto disponible</span>
+
+                    <!-- Tarjeta de Presupuesto Restante -->
+                    <div class="card summary-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Presupuesto Restante</h3>
+                            <div class="card-icon budget-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                        </div>
+                        <div class="card-value budget-value">$0.00</div>
+                        <div class="card-change">
+                            <span>0% del presupuesto disponible</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Seccion 2: Graficos -->
-        <section class="charts-section">
-            <h2 class="section-title">Visualizacion de datos</h2>
-            
-            <div class="charts-grid">
-                <!-- Grafico 1: Gastos por categoria -->
-                <div class="chart-container">
-                    <div class="chart-header">
-                        <h3 class="chart-title">Gastos por categoria</h3>
-                        <select class="chart-filter">
-                            <option value="month">Este mes</option>
-                            <option value="quarter">Este trimestre</option>
-                            <option value="year">Este año</option>
-                        </select>
+            <!-- Sección 2: Gráficos -->
+            <section class="charts-section">
+                <h2 class="section-title">Visualización de datos</h2>
+                
+                <div class="charts-grid">
+                    <!-- Gráfico 1: Gastos por categoría -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Gastos por categoría</h3>
+                            <select class="chart-filter" id="chart1-filter">
+                                <option value="month">Este mes</option>
+                                <option value="quarter">Este trimestre</option>
+                                <option value="year">Este año</option>
+                            </select>
+                        </div>
+                        <canvas id="expensesByCategoryChart" height="300"></canvas>
                     </div>
-                    <div class="chart-placeholder">
-                        <i class="fas fa-chart-pie"></i>
-                        <span>Grafico de dona/pastel - Chart.js</span>
+
+                    <!-- Gráfico 2: Evolución mensual -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Evolución del Balance</h3>
+                            <select class="chart-filter" id="chart2-filter">
+                                <option value="6months">Últimos 6 meses</option>
+                                <option value="year">Último año</option>
+                                <option value="2years">Últimos 2 años</option>
+                            </select>
+                        </div>
+                        <canvas id="balanceEvolutionChart" height="300"></canvas>
+                    </div>
+
+                    <!-- Gráfico 3: Comparativa presupuesto vs real -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Presupuesto vs Real</h3>
+                            <select class="chart-filter" id="chart3-filter">
+                                <option value="current">Mes actual</option>
+                                <option value="previous">Mes anterior</option>
+                            </select>
+                        </div>
+                        <canvas id="budgetVsActualChart" height="300"></canvas>
+                    </div>
+
+                    <!-- Gráfico 4: Distribución ingresos vs gastos -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Ingresos vs Gastos</h3>
+                            <select class="chart-filter" id="chart4-filter">
+                                <option value="month">Este mes</option>
+                                <option value="year">Este año</option>
+                            </select>
+                        </div>
+                        <canvas id="incomeVsExpensesChart" height="300"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 3: Transacciones recientes -->
+            <section class="recent-transactions">
+                <div class="table-header">
+                    <h2 class="section-title">Transacciones Recientes</h2>
+                    <div class="table-actions">
+                        <button class="btn btn-secondary" id="filterTransactionsBtn">
+                            <i class="fas fa-filter"></i> Filtrar
+                        </button>
+                        <button class="btn btn-primary" id="newTransactionBtn">
+                            <i class="fas fa-plus"></i> Nueva transacción
+                        </button>
                     </div>
                 </div>
 
-                <!-- Grafico 2: Evolución mensual -->
-                <div class="chart-container">
-                    <div class="chart-header">
-                        <h3 class="chart-title">Evolucion del Balance</h3>
-                        <select class="chart-filter">
-                            <option value="6months">ultimos 6 meses</option>
-                            <option value="year">ultimo año</option>
-                            <option value="2years">ultimos 2 años</option>
-                        </select>
-                    </div>
-                    <div class="chart-placeholder">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Grafico de lineas - Chart.js</span>
-                    </div>
+                <div class="transactions-container">
+                    <table class="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Descripción</th>
+                                <th>Categoría</th>
+                                <th>Tipo</th>
+                                <th>Monto</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentTransactionsTable">
+                            <!-- Las transacciones se cargarán dinámicamente -->
+                        </tbody>
+                    </table>
                 </div>
 
-                <!-- Grafico 3: Comparativa presupuesto vs real -->
-                <div class="chart-container">
-                    <div class="chart-header">
-                        <h3 class="chart-title">Presupuesto vs Real</h3>
-                        <select class="chart-filter">
-                            <option value="current">Mes actual</option>
-                            <option value="previous">Mes anterior</option>
-                        </select>
-                    </div>
-                    <div class="chart-placeholder">
-                        <i class="fas fa-chart-bar"></i>
-                        <span>Gráfico de barras - Chart.js</span>
-                    </div>
-                </div>
-
-                <!-- Grafico 4: Distribucion ingresos vs gastos -->
-                <div class="chart-container">
-                    <div class="chart-header">
-                        <h3 class="chart-title">Ingresos vs Gastos</h3>
-                        <select class="chart-filter">
-                            <option value="month">Este mes</option>
-                            <option value="year">Este año</option>
-                        </select>
-                    </div>
-                    <div class="chart-placeholder">
-                        <i class="fas fa-chart-bar"></i>
-                        <span>Grafico de barras comparativo - Chart.js</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección 3: Transacciones recientes -->
-        <section class="recent-transactions">
-            <div class="table-header">
-                <h2 class="section-title">Transacciones Recientes</h2>
-                <div class="table-actions">
-                    <button class="btn btn-secondary">
-                        <i class="fas fa-filter"></i> Filtrar
+                <div class="table-footer">
+                    <button class="btn btn-secondary" id="viewAllTransactionsBtn">
+                        <i class="fas fa-eye"></i> Ver todas las transacciones
                     </button>
-                    <button class="btn btn-primary">
-                        <i class="fas fa-plus"></i> Nueva transaccion
+                </div>
+            </section>
+
+            <!-- Sección 4: Estado de presupuestos -->
+            <section class="budgets-section">
+                <div class="section-header">
+                    <h2 class="section-title">Estado de presupuestos</h2>
+                    <button class="btn btn-primary" id="newBudgetBtn">
+                        <i class="fas fa-plus"></i> Nuevo presupuesto
                     </button>
                 </div>
-            </div>
 
-            <table class="transactions-table">
-                <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Descripción</th>
-                        <th>Categoría</th>
-                        <th>Tipo</th>
-                        <th>Monto</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Transaccion 1 -->
-                    <tr>
-                        <td>15/10/2023</td>
-                        <td>Supermercado semanal</td>
-                        <td>
-                            <span class="category-badge">
-                                <i class="fas fa-shopping-cart"></i>
-                                Alimentacion
-                            </span>
-                        </td>
-                        <td>
-                            <span class="transaction-type type-expense">Egreso</span>
-                        </td>
-                        <td class="expense-value">-$85.50</td>
-                        <td>
-                            <button class="icon-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="icon-btn" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
+                <div class="budgets-grid" id="budgetsGrid">
+                    <!-- Los presupuestos se cargarán dinámicamente -->
+                </div>
+            </section>
+        </section>
 
-                    <!-- Transaccion 2 -->
-                    <tr>
-                        <td>14/10/2023</td>
-                        <td>Salario mensual</td>
-                        <td>
-                            <span class="category-badge">
-                                <i class="fas fa-money-bill-wave"></i>
-                                Ingreso fijo
-                            </span>
-                        </td>
-                        <td>
-                            <span class="transaction-type type-income">Ingreso</span>
-                        </td>
-                        <td class="income-value">+$2,500.00</td>
-                        <td>
-                            <button class="icon-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="icon-btn" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
+        <!-- Vista: Transacciones -->
+        <section id="transactions-view" class="view">
+            <section class="page-header">
+                <h1 class="page-title">Transacciones</h1>
+                <p class="page-subtitle">Gestiona todos tus ingresos y gastos</p>
+            </section>
 
-                    <!-- Transaccion 3 -->
-                    <tr>
-                        <td>13/10/2023</td>
-                        <td>Pago de electricidad</td>
-                        <td>
-                            <span class="category-badge">
-                                <i class="fas fa-bolt"></i>
-                                Servicios
-                            </span>
-                        </td>
-                        <td>
-                            <span class="transaction-type type-expense">Egreso</span>
-                        </td>
-                        <td class="expense-value">-$65.00</td>
-                        <td>
-                            <button class="icon-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="icon-btn" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
+            <div class="card">
+                <div class="table-header">
+                    <div class="transactions-filters">
+                        <select id="filterType" class="chart-filter">
+                            <option value="all">Todos los tipos</option>
+                            <option value="income">Ingresos</option>
+                            <option value="expense">Egresos</option>
+                        </select>
+                        <select id="filterCategory" class="chart-filter">
+                            <option value="all">Todas las categorías</option>
+                        </select>
+                        <input type="month" id="filterMonth" class="chart-filter">
+                        <input type="text" id="searchTransactions" class="chart-filter" 
+                               placeholder="Buscar por descripción o categoría...">
+                    </div>
+                    <button class="btn btn-primary" id="newTransactionBtn2">
+                        <i class="fas fa-plus"></i> Nueva transacción
+                    </button>
+                </div>
 
-                    <!-- Transaccion 4 -->
-                    <tr>
-                        <td>12/10/2023</td>
-                        <td>Gasolina del auto</td>
-                        <td>
-                            <span class="category-badge">
-                                <i class="fas fa-car"></i>
-                                Transporte
-                            </span>
-                        </td>
-                        <td>
-                            <span class="transaction-type type-expense">Egreso</span>
-                        </td>
-                        <td class="expense-value">-$40.00</td>
-                        <td>
-                            <button class="icon-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="icon-btn" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
+                <div class="transactions-container">
+                    <table class="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Descripción</th>
+                                <th>Categoría</th>
+                                <th>Tipo</th>
+                                <th>Monto</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="allTransactionsTable">
+                            <!-- Todas las transacciones se cargarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
 
-                    <!-- Transaccion 5 -->
-                    <tr>
-                        <td>10/10/2023</td>
-                        <td>Freelance diseño web</td>
-                        <td>
-                            <span class="category-badge">
-                                <i class="fas fa-laptop-code"></i>
-                                Trabajo Extra
-                            </span>
-                        </td>
-                        <td>
-                            <span class="transaction-type type-income">Ingreso</span>
-                        </td>
-                        <td class="income-value">+$350.00</td>
-                        <td>
-                            <button class="icon-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="icon-btn" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="table-footer">
-                <button class="btn btn-secondary">
-                    <i class="fas fa-eye"></i> Ver todas las transacciones
-                </button>
+                <div class="table-footer table-footer-transactions">
+                    <div class="summary-info">
+                        <strong>Total:</strong> 
+                        <span id="totalIncome">Ingresos: $0.00</span>
+                        <span id="totalExpense">Egresos: $0.00</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-secondary" id="exportTransactionsBtn">
+                            <i class="fas fa-download"></i> Exportar
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Seccion 4: Estado de presupuestos -->
-        <section class="budgets-section">
-            <div class="section-header">
-                <h2 class="section-title">Estado de presupuestos</h2>
-                <button class="btn btn-primary">
-                    <i class="fas fa-plus"></i> Nuevo presupuesto
-                </button>
+        <!-- Vista: Categorías -->
+        <section id="categories-view" class="view">
+            <section class="page-header">
+                <h1 class="page-title">Categorías</h1>
+                <p class="page-subtitle">Gestiona tus categorías de ingresos y gastos</p>
+            </section>
+
+            <div class="card">
+                <div class="table-header">
+                    <h2 class="section-title">Todas las categorías</h2>
+                    <button class="btn btn-primary" id="newCategoryBtn">
+                        <i class="fas fa-plus"></i> Nueva categoría
+                    </button>
+                </div>
+
+                <div class="categories-container">
+                    <div class="categories-grid" id="categoriesGrid">
+                        <!-- Las categorías se cargarán aquí -->
+                    </div>
+                </div>
+
+                <div class="warning-section">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Advertencia</h3>
+                    <p>
+                        Al eliminar una categoría que tiene transacciones asociadas, todas esas transacciones también serán eliminadas permanentemente.
+                    </p>
+                </div>
             </div>
+        </section>
 
-            <div class="budgets-grid">
-                <!-- Presupuesto 1 -->
-                <div class="card budget-card">
-                    <div class="budget-header">
-                        <h3 class="budget-title">Alimentacion</h3>
-                        <span class="budget-status status-warning">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            85% usado
-                        </span>
+        <!-- Vista: Presupuestos -->
+        <section id="budgets-view" class="view">
+            <section class="page-header">
+                <h1 class="page-title">Presupuestos</h1>
+                <p class="page-subtitle">Planifica y controla tus gastos mensuales</p>
+            </section>
+
+            <div class="card">
+                <div class="table-header">
+                    <div class="budgets-filters">
+                        <select id="budgetMonthSelect" class="chart-filter">
+                            <!-- Las opciones se llenarán dinámicamente -->
+                        </select>
+                        <select id="budgetYearSelect" class="chart-filter">
+                            <!-- Las opciones se llenarán dinámicamente -->
+                        </select>
                     </div>
-                    <div class="budget-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 85%; background-color: #F59E0B;"></div>
-                        </div>
-                        <div class="budget-amounts">
-                            <span class="budget-spent">$425 / $500</span>
-                            <span class="budget-remaining">$75 restantes</span>
-                        </div>
-                    </div>
+                    <button class="btn btn-primary" id="newBudgetBtn2">
+                        <i class="fas fa-plus"></i> Nuevo presupuesto
+                    </button>
                 </div>
 
-                <!-- Presupuesto 2 -->
-                <div class="card budget-card">
-                    <div class="budget-header">
-                        <h3 class="budget-title">Transporte</h3>
-                        <span class="budget-status status-good">
-                            <i class="fas fa-check-circle"></i>
-                            45% usado
-                        </span>
-                    </div>
-                    <div class="budget-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 45%; background-color: #10B981;"></div>
-                        </div>
-                        <div class="budget-amounts">
-                            <span class="budget-spent">$90 / $200</span>
-                            <span class="budget-remaining">$110 restantes</span>
-                        </div>
-                    </div>
+                <div class="budgets-container" id="budgetsContainer">
+                    <!-- Los presupuestos se cargarán aquí -->
                 </div>
 
-                <!-- Presupuesto 3 -->
-                <div class="card budget-card">
-                    <div class="budget-header">
-                        <h3 class="budget-title">Ocio</h3>
-                        <span class="budget-status status-danger">
-                            <i class="fas fa-exclamation-circle"></i>
-                            95% usado
-                        </span>
-                    </div>
-                    <div class="budget-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 95%; background-color: #EF4444;"></div>
-                        </div>
-                        <div class="budget-amounts">
-                            <span class="budget-spent">$190 / $200</span>
-                            <span class="budget-remaining">$10 restantes</span>
-                        </div>
-                    </div>
+                <div class="budget-summary" id="budgetSummarySection">
+                    <!-- El resumen se cargará aquí -->
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer: Pie de pagina -->
+    <!-- Modales y notificaciones (se crearán dinámicamente) -->
+    <div id="modals-container"></div>
+    <div id="notifications-container"></div>
+
+    <!-- Footer: Pie de página -->
     <footer>
         <div class="footer-content container">
             <div class="footer-info">
@@ -427,11 +381,11 @@
             </div>
             
             <div class="footer-links">
-                <h4 class="footer-title">Enlaces rapidos</h4>
+                <h4 class="footer-title">Enlaces rápidos</h4>
                 <ul>
                     <li><a href="#dashboard" class="footer-link">Dashboard</a></li>
                     <li><a href="#transactions" class="footer-link">Transacciones</a></li>
-                    <li><a href="#categories" class="footer-link">Categorias</a></li>
+                    <li><a href="#categories" class="footer-link">Categorías</a></li>
                     <li><a href="#budgets" class="footer-link">Presupuestos</a></li>
                 </ul>
             </div>
@@ -439,7 +393,7 @@
             <div class="footer-contact">
                 <h4 class="footer-title">Universidad Rafael Urdaneta</h4>
                 <p class="footer-contact-info">
-                    <i class="fas fa-graduation-cap"></i> Ingenieria de computacion
+                    <i class="fas fa-graduation-cap"></i> Ingeniería de computación
                 </p>
                 <p class="footer-contact-info">
                     <i class="fas fa-calendar-alt"></i> 2025
